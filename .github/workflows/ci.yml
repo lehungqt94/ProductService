@@ -40,7 +40,7 @@ jobs:
       - name: Update manifest repo
         run: |
           git clone https://${{ secrets.MANIFEST_REPO_TOKEN }}@github.com/lehungqt94/ProductGitops.git
-          cd /ProductGitOps/src/configure
+          cd ProductGitOps/src/configure
           sed -i "s|image:.*|image: hunglq/product-app:${{ github.sha }}|" product-deployment.yaml
           git config user.email "ci@github.com"
           git config user.name "github-actions"
