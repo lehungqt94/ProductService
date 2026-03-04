@@ -37,12 +37,12 @@ jobs:
         run: |
           docker push hunglq/product-app:${{ github.sha }}
           docker push hunglq/product-app:latest
-#      - name: Update manifest repo
-#        run: |
-#          git clone https://${{ secrets.MANIFEST_REPO_TOKEN }}@git@github.com:lehungqt94/ProductGitops.git
-#          cd /ProductGitOps/src/configure
-#          sed -i "s|image:.*|image: hunglq/product-app:${{ github.sha }}|" deployment.yaml
-#          git config user.email "ci@github.com"
-#          git config user.name "github-actions"
-#          git commit -am "Update image tag"
-#          git push
+      - name: Update manifest repo
+        run: |
+          git clone https://${{ secrets.MANIFEST_REPO_TOKEN }}@git@github.com:lehungqt94/ProductGitops.git
+          cd /ProductGitOps/src/configure
+          sed -i "s|image:.*|image: hunglq/product-app:${{ github.sha }}|" product-deployment.yaml
+          git config user.email "ci@github.com"
+          git config user.name "github-actions"
+          git commit -am "Update image tag"
+          git push
