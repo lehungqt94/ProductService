@@ -1,7 +1,6 @@
 package org.example.service;
 
-import org.example.entity.Category;
-import org.example.entity.Product;
+import org.example.model.Product;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -18,10 +17,10 @@ public class ProductService {
     @PostConstruct
     public void initdata() {
         products = new ArrayList<>();
-        products.add(new Product(1, "O Mo", Category.OTHER, 10.5));
-        products.add(new Product(2, "DishWasher", Category.MACHINE, 1000.5));
-        products.add(new Product(3, "Hoover", Category.MACHINE, 250.5));
-        products.add(new Product(4, "Ball", Category.SPORT, 7.5));
+        products.add(new Product(1, "O Mo", Product.Category.OTHER, 10.5));
+        products.add(new Product(2, "DishWasher", Product.Category.MACHINE, 1000.5));
+        products.add(new Product(3, "Hoover", Product.Category.MACHINE, 250.5));
+        products.add(new Product(4, "Ball", Product.Category.SPORT, 7.5));
     }
 
     public List<Product> getProducts() {
