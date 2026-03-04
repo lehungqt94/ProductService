@@ -37,7 +37,7 @@ jobs:
         run: |
           docker push hunglq/product-app:${{ github.sha }}
           docker push hunglq/product-app:latest
-      - name: Update manifest repository
+      - name: Update manifest repo
         run: |
           git clone https://${{ secrets.MANIFEST_REPO_TOKEN }}@github.com/lehungqt94/ProductGitops.git
           cd ProductGitops/src/configure
